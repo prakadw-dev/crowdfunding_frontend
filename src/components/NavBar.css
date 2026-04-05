@@ -5,3 +5,15 @@ nav {
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
+a {
+  margin: 5px;
+  padding: 5px;
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+}
+
+a:hover {
+  font-weight: bolder;
+  transition: 0.5s ease-in-out;
+}

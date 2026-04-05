@@ -1,0 +1,21 @@
+form {
+  margin: 6px;
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  display: block;
+}
+button {
+  padding: 4px;
+  margin: 4px;
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+div {
+  padding: 3px;
+}

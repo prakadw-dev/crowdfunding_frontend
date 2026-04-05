@@ -1,8 +1,17 @@
 .fundraiser-card {
   width: 100%;
-  border: 1px solid black;
+  border: 2px solid #c8e7ed;
+  border-radius: 3px;
   box-shadow: 0px 0px 5px gray;
+  background-color: #ffa5a5;
 }
+
+.fundraiser-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
 h3 {
   text-align: center;
   font-family: "Sour Gummy", sans-serif;
@@ -12,8 +21,7 @@ h3 {
   font-variation-settings: "wdth" 100;
 }
 
-/* .fundraiser-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-} */
+h3:hover {
+  font-weight: bolder;
+  transition: 0.5s ease-in-out;
+}
