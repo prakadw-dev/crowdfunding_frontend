@@ -11,6 +11,7 @@ async function updateFundraiser(fundraiserData, fundraiserId) {
     method: "PUT",
     headers: {
       Authorization: `Token ${token}`,
+      "Content-Type": "application/json",
     },
     body: body,
   });
