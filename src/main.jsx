@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import CreateFundraiserPage from "./pages/CreateFundraiserPage.jsx";
+import PledgePage from "./pages/PledgePage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,11 +18,11 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/login", element: <LoginPage /> },
+      { path: "/fundraiser/create", element: <CreateFundraiserPage /> },
       { path: "/fundraiser/:id", element: <FundraiserPage /> },
       { path: "/about", element: <AboutPage /> },
       { path: "/contact", element: <ContactPage /> },
-      { path: "/fundraiser/create", element: <CreateFundraiserPage /> },
-      { path: "/fundraiser/:id", element: <FundraiserPage /> },
+      { path: "/fundraiser/:id/pledge", element: <PledgePage /> },
     ],
   },
 ]);
