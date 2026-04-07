@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useActionData } from "react-router-dom";
 import "./FundraiserCard.css";
 
 function FundraiserCard(props) {
@@ -11,6 +11,9 @@ function FundraiserCard(props) {
         <img src={fundraiserData.image} alt={fundraiserData.title} />
         <h3>{fundraiserData.title}</h3>
       </Link>
+      <button type="submit" onChange={useActionData}>
+        Pledge
+      </button>
     </div>
   );
 }

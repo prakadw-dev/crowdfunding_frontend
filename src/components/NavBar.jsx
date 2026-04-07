@@ -10,6 +10,9 @@ function NavBar() {
         <Link to="/login">Log In</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
+        {window.localStorage.getItem("token") && (
+          <Link to="/fundraiser/create">Create Fundraiser</Link>
+        )}
       </nav>
       <Outlet />
     </div>
