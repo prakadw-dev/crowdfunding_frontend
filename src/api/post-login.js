@@ -1,5 +1,6 @@
 async function postLogin(username, password) {
   const url = `${import.meta.env.VITE_API_URL}/api-token-auth/`;
+
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -22,7 +23,10 @@ async function postLogin(username, password) {
     throw new Error(errorMessage);
   }
 
-  return await response.json();
+  const data = await response.json();
+  window.localStorage.setItem("token", data.token);
+  window.localStorage.setItem("username", data.username);
+  return data;
 }
 
 export default postLogin;
