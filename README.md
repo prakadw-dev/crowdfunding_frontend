@@ -50,7 +50,7 @@ To submit, fill out [this Google form](https://forms.gle/34ymxgPhdT8YXDgF6), inc
 
 Please include the following in your readme doc:
 
-- [ ] A link to the deployed project.
+- [ ] A link to the deployed project - https://app.netlify.com/projects/shecodesreactjs/overview
 - [ ] A screenshot of the homepage
 - [ ] A screenshot of the fundraiser creation page
 - [ ] A screenshot of the fundraiser creation form
