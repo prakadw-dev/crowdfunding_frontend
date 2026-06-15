@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useActionData } from "react-router-dom";
 import "./FundraiserCard.css";
 
 function FundraiserCard(props) {

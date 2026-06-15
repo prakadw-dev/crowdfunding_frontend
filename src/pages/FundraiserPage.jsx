@@ -1,11 +1,18 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import useFundraiser from "../hooks/use-fundraiser";
+import UpdateFundraiserForm from "../components/UpdateFundraiser";
+import deletePledge from "../api/delete-pledge";
 
 function FundraiserPage() {
   // Here we use a hook that comes for free in react router called `useParams` to get the id from the URL so that we can pass it to our useFundraiser hook.
   const { id } = useParams();
   // useFundraiser returns three pieces of info, so we need to grab them all here
   const { fundraiser, isLoading, error } = useFundraiser(id);
+
+  const [isEditing, setIsEditing] = useState(false);
+
+  const loggedInUser = window.localStorage.getItem("username");
 
   if (isLoading) {
     return <p>loading...</p>;
@@ -20,12 +27,29 @@ function FundraiserPage() {
       <h2>{fundraiser.title}</h2>
       <h3>Created at: {fundraiser.date_created}</h3>
       <h3>{`Status: ${fundraiser.is_open}`}</h3>
+      {loggedInUser === fundraiser.owner && (
+        <button onClick={() => setIsEditing(!isEditing)}>
+          Edit Fundraiser
+        </button>
+      )}
+      {isEditing && (
+        <UpdateFundraiserForm
+          fundraiserId={fundraiser.id}
+          currentTargetAmount={fundraiser.target_amount}
+          currentIsOpen={fundraiser.is_open}
+        />
+      )}
       <h3>Pledges:</h3>
       <ul>
         {fundraiser.pledges.map((pledgeData, key) => {
           return (
             <li key={key}>
               {pledgeData.amount} from {pledgeData.supporter}
+              {loggedInUser === pledgeData.supporter && (
+                <button onClick={() => deletePledge(pledgeData.id)}>
+                  Delete
+                </button>
+              )}
             </li>
           );
         })}
